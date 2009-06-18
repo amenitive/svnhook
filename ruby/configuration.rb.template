@@ -1,0 +1,32 @@
+
+## 
+# This is where we keep our configuration until we find a better solution.
+# Modify the entries in the hash 'config'.
+
+class Configuration
+  class << self
+    attr_accessor :config
+  end
+end
+
+Configuration.config={
+  # users or '*' so that everybody can create
+  :users_allowed_to_create_modules => ['*'],
+  :module_root                     => "codebase",
+  :symlink_notification_recipients  => ['janos.mucsi@macys.com'],
+  
+  # Permission and notification for select paths.
+  # Directories may not begin with / and must end with /.
+  # Use '*' to allow any user.
+  # Example:
+  # { :name=>'codebase/',
+  #   :authorized_to_checkin=>['john', 'rob'],
+  #   :notify_on_change=>['john@mycompany.com'],
+  #   :if_commit_user_matches => /mcywas/,
+  #   :if_commit_user_not_matches => /p139/  }
+  :paths_to_watch_for_changes      => [],
+  
+  # Logging
+  :log_file                   => "/svnhook.log",
+  :log_level                  => "INFO"
+}

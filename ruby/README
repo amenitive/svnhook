@@ -1,0 +1,4 @@
+These are the hooks to be used with Subversion.
+
+To make the hooks usable, execute this:
+cp configuration.rb.template configuration.rb
